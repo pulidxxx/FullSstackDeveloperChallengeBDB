@@ -1,0 +1,16 @@
+{
+  "name": "fullsstackdeveloperchallengebdb",
+  "version": "1.0.0",
+  "description": "Solution to the challenges proposed in the BDB Challenge",
+  "scripts": {
+    "build": "tsc",
+    "start:challenge1": "ts-node challenge1.ts",
+    "start:challenge2": "ts-node challenge2.ts",
+    "start:challenge3": "ts-node challenge3.ts"
+  },
+  "author": "Felipe Pulido",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
