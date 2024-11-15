@@ -10,6 +10,7 @@ Este proyecto es la solución a los tres retos propuestos en el Full-stack Devel
 | ---------- | ------- |
 | Node.js    | >=14.17 |
 | TypeScript | ^5.6.3  |
+| ts-node    | ^10.9.2 |
 
 ## Instalación
 
