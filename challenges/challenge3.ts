@@ -5,28 +5,28 @@ unique (i.e., you can have multiple coins of the same value). You can use built-
 language.
 */
 
-// Pruebas
-console.log(getMinImpossibleAmount([5, 7, 1, 1, 2, 3, 22])); // 20
-console.log(getMinImpossibleAmount([1, 5, 1, 1, 1, 10, 15, 20, 100])); // 55
-console.log(getMinImpossibleAmount([1, 1, 1, 1, 1])); // 6
-
 function getMinImpossibleAmount(coins: number[]): number {
-  // Ordenar las monedas en orden ascendente
+  // Sort the coins in ascending order
   coins.sort((a, b) => a - b);
 
-  // Inicializar el cambio máximo que podemos crear
+  // Initialize the maximum change that can be created
   let currentChangeCreated = 0;
 
-  // Iterar sobre las monedas
+  // Iterate over the coins
   for (const coin of coins) {
-    // Si la moneda actual es mayor que el cambio que podemos crear + 1, encontramos el resultado
+    // If the current coin is greater than the current change created + 1, return the result
     if (coin > currentChangeCreated + 1) {
       return currentChangeCreated + 1;
     }
-    // Actualizar el cambio máximo que podemos generar
+    // Update the maximum change that can be created
     currentChangeCreated += coin;
   }
 
-  // Devolver el resultado final si todas las monedas se pueden combinar
+  // Return the final result if all coins can be combined
   return currentChangeCreated + 1;
 }
+
+// Tests
+console.log(getMinImpossibleAmount([5, 7, 1, 1, 2, 3, 22])); // 20
+console.log(getMinImpossibleAmount([1, 5, 1, 1, 1, 10, 15, 20, 100])); // 55
+console.log(getMinImpossibleAmount([1, 1, 1, 1, 1])); // 6
