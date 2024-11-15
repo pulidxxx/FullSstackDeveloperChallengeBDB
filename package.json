@@ -4,9 +4,9 @@
   "description": "Solution to the challenges proposed in the BDB Challenge",
   "scripts": {
     "build": "tsc",
-    "start:challenge1": "ts-node challenge1.ts",
-    "start:challenge2": "ts-node challenge2.ts",
-    "start:challenge3": "ts-node challenge3.ts"
+    "start:challenge1": "ts-node challenges/challenge1.ts",
+    "start:challenge2": "ts-node challenges/challenge2.ts",
+    "start:challenge3": "ts-node challenges/challenge3.ts"
   },
   "author": "Felipe Pulido",
   "license": "ISC",
