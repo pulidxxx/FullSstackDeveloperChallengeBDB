@@ -1,3 +1,4 @@
+import promptSync from "prompt-sync";
 /* Challenge description: Given an array of positive integers representing the values of coins in your possession, write a
 function that returns the minimum amount of change (the minimum sum of money) that you
 CANNOT give change. The given coins can have any positive integer value and aren't necessarily
@@ -26,7 +27,36 @@ function getMinImpossibleAmount(coins: number[]): number {
   return currentChangeCreated + 1;
 }
 
+// Request user input
+let userPrompt = promptSync();
+let userInput = userPrompt("Ingrese las monedas separadas por comas: ");
+let inputArray = userInput
+  .split(",")
+  .map((num: string) => parseInt(num.trim()));
+let result = getMinImpossibleAmount(inputArray);
+
+if (result) {
+  console.log("Resultado:", result);
+}
+
 // Tests
-console.log(getMinImpossibleAmount([5, 7, 1, 1, 2, 3, 22])); // 20
-console.log(getMinImpossibleAmount([1, 5, 1, 1, 1, 10, 15, 20, 100])); // 55
-console.log(getMinImpossibleAmount([1, 1, 1, 1, 1])); // 6
+
+// Test 1: Consecutive coin values that allow making all change
+// Input: 1, 2, 3, 4, 5
+// Expected output: 16
+
+// Test 2: Large coin values that don't allow making small change
+// Input: 10, 20, 30
+// Expected output: 1
+
+// Test 3: Repeated coins that don't allow making some intermediate values
+// Input: 1, 1, 3, 4, 9
+// Expected output: 19
+
+// Test 4: Only one coin with a value greater than 1
+// Input: 5
+// Expected output: 1
+
+// Test 5: Unordered coins with large gaps between their values
+// Input: 20, 2, 10, 2, 1
+// Expected output: 6

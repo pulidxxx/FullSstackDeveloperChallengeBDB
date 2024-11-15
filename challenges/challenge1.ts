@@ -13,7 +13,7 @@ function filterAndReverseArray(
   // Validate array size
   if (arrayLength > 100 || arrayLength === 0) {
     console.log(
-      "Array length must be less than or equal to 100 and greater than 0."
+      "Debe ingresar una lista que no este vacía  y con 100 o menos números."
     );
     return;
   }
@@ -52,9 +52,38 @@ function filterAndReverseArray(
 // Felipe Pulido
 // MD5 Hash: b54db41751f15810f78877762d09693a
 // S = 5
+const S = 5;
+
+// Request user input
+let userPrompt = require("prompt-sync")();
+let userInput = userPrompt("Ingrese los números separados por comas: ");
+let inputArray = userInput
+  .split(",")
+  .map((num: string) => parseInt(num.trim()));
+let result = filterAndReverseArray(inputArray, S);
+
+if (result) {
+  console.log(`Resultado con S=${S}:`, result);
+}
 
 // Tests
-console.log(filterAndReverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 5)); // [4, 3, 2, 1]
-console.log(
-  filterAndReverseArray([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144], 5)
-); //[34, 21, 13, 3, 2,  1,  1, 0]
+
+// Test 1: Numbers with multiple digits where only some meet the criteria.
+// Input: 987, 456, 321, 654, 987
+// Expected output: [ 4, 321, 4 ]
+
+// Test 2: All numbers have digits greater than or equal to S.
+// Input: 567, 789, 999
+// Expected output: []
+
+// Test 3: All numbers in the array meet the condition S.
+// Input: 123, 12, 1, 3, 4
+// Expected output: [ 4, 3, 1, 12, 123 ]
+
+// Test 4:
+// Input: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+// Expected output: [ 20, 1, 1, 1, 1, 1, 14, 13, 12, 11, 10, 4, 3, 2, 1]
+
+// Test 5: Input with more than 100 numbers
+// Input: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101
+// Expected output: Debe ingresar una lista que no este vacía  y con 100 o menos números.

@@ -6,11 +6,12 @@ Este proyecto es la solución a los tres retos propuestos en el Full-stack Devel
 
 ## Tecnologías
 
-| Tecnología | Versión |
-| ---------- | ------- |
-| Node.js    | >=14.17 |
-| TypeScript | ^5.6.3  |
-| ts-node    | ^10.9.2 |
+| Tecnología  | Versión |
+| ----------- | ------- |
+| Node.js     | >=14.17 |
+| TypeScript  | ^5.6.3  |
+| ts-node     | ^10.9.2 |
+| prompt-sync | ^4.2.0  |
 
 ## Instalación
 
