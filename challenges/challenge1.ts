@@ -42,6 +42,12 @@ function filterAndReverseArray(
 
   while (i < j) {
     [filteredArray[i], filteredArray[j]] = [filteredArray[j], filteredArray[i]]; // Swap positions
+
+    // // Usando una variable auxiliar
+    // let temp = filteredArray[i];
+    // filteredArray[i] = filteredArray[j];
+    // filteredArray[j] = temp;
+
     i++;
     j--;
   }
